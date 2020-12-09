@@ -8,8 +8,8 @@ with open("./5/input.txt") as inputFile:
 		seats.append(seat)
 
 seats.sort()
-seats = set(seats)
+seatsSet = set(seats)
 
-allSeats = set(range(89,990))
+allSeats = set(range(seats[0],seats[-1]+1))
 
-print("your seat is seat number {}".format(seats.symmetric_difference(allSeats)))
+print("your seat is seat number {}".format(seatsSet.symmetric_difference(allSeats)))
