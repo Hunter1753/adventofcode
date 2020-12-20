@@ -1,5 +1,5 @@
 adapters = [0]
-with open("./10/input.txt") as inputFile:
+with open("./10/input_medium.txt") as inputFile:
 	for line in inputFile:
 		adapter = int(line.replace("\n",""))
 		adapters.append(adapter)
@@ -19,7 +19,7 @@ def getPossibleWays(index):
 	for i in range(index+1, index+4):
 		if i >= len(adapters):
 			break
-		if adapters[index] - adapters[i] <= 3:
+		if adapters[i] - adapters[index] <= 3:
 			sumOfFollowing += getPossibleWays(i)
 
 	possibilities[index] = sumOfFollowing
